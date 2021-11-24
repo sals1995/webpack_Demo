@@ -1,4 +1,4 @@
-import hello from './hellow wolrd.js';
+import hello from './hello world';
 hello()
 import header from "./component/header/header"
 // // nooo

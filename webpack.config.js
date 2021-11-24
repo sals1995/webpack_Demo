@@ -12,7 +12,6 @@ module.exports = {
     , path: pathModule.resolve(__dirname, "build"),
     assetModuleFilename: 'images/[name][ext]'
   },
-  devtool: 'source-map',
   module: {
     rules: [
       {
