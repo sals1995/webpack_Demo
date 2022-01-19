@@ -5,11 +5,11 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/index.js",
   output: {
     filename: "bundle.min.js"
-    , path: pathModule.resolve(__dirname, "build"),
+    , path: pathModule.resolve(__dirname, "dist"),
     assetModuleFilename: 'images/[name][ext]'
   },
   module: {
@@ -36,36 +36,30 @@ module.exports = {
     ]
   }
   , plugins: [
-    new htmlPlugin(),
-    new MiniCssExtractPlugin({ filename: "styles.css", }),
-    new ImageMinimizerPlugin({
-      minimizerOptions: {
-        // Lossless optimization with custom option
-        // Feel free to experiment with options for better result for you
-        plugins: [
-          ['gifsicle', { interlaced: true }],
-          ['mozjpeg', { quality: 60 }],
-          ['optipng', { optimizationLevel: 5 }],
-          [
-            'svgo',
-            {
-              plugins: [
-                {
-                  removeViewBox: false,
-                },
-              ],
-            },
-          ],
-        ],
-      },
-    }),
-    new CleanWebpackPlugin()
-      , new CssMinimizerPlugin()
+    new htmlPlugin({template:"src/index.html"}),
+    new MiniCssExtractPlugin({ filename: "styles.css" }),    
+    new CleanWebpackPlugin(),
+    new CssMinimizerPlugin()
+      
   ],
-  optimization: {
-    minimize: true,
-    minimizer: [
-      "..."
+  optimization:{
+    minimize:true,
+    minimizer:[
+      
+      "...",
+      new ImageMinimizerPlugin({
+        minimizerOptions: {
+            // Lossless and lossy optimization with custom option
+            // Feel free to experiment with options for better result for you
+            plugins: [
+              ["gifsicle", { interlaced: true }],
+              ["mozjpeg",{quality:70}],
+              ["optipng", { optimizationLevel: 5 }],
+              // Svgo configuration here https://github.com/svg/svgo#configuration
+             ['svgo']
+            ],
+        },
+      }),
     ]
   }
 }
