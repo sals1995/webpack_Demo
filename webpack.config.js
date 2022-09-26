@@ -4,11 +4,11 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "bundle.js",
-    path: pathModule.resolve(__dirname, "build"),
+    filename: "script.bundle.js",
+    path: pathModule.resolve(__dirname, "dist"),
     assetModuleFilename: 'images/[name][ext]'
   },
   module: {
@@ -39,13 +39,14 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin(), new MiniCssExtractPlugin(),
-  new CssMinimizerPlugin()
+  plugins: [new HtmlWebpackPlugin(), new MiniCssExtractPlugin("style.min.css"),
+ 
   ],
   optimization: {
     minimizer: [
-      //terser
+      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
       "...",
+      new CssMinimizerPlugin(),
       new ImageMinimizerPlugin({
         minimizer: {
           implementation: ImageMinimizerPlugin.imageminMinify,
