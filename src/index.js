@@ -1,36 +1,6 @@
-import hello from './hello world';
+import hello from "./hello world"
 hello()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import header from "./component/header/header"
-// // // nooo
 
 
 
@@ -39,13 +9,29 @@ import "./style.css"
 
 
 
+import "./component/header/header"
+import"./component/cover/cover"
+
+import"./component/bio/bio"
+
+
+import"./assets/city.png"
 
 
 
-import bio from "./component/bio/bio"
-import photo from"./assets/cover.jpg"
 
 
-/* 
-this is a big comment
- */
+
+// // //
+// // /* 
+// // this is a big comment
+
+
+
+
+
+
+
+
+
+// //  */

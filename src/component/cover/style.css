@@ -1,0 +1,8 @@
+.cover{
+    background-image: url("../../assets/cover.jpg");
+    backdrop-filter:blur(100%);
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
