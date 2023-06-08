@@ -3,28 +3,14 @@ hello()
 
 
 
-
+import header from "./component/header/header"
 
 import "./style.css"
 
+import cover from"./component/cover/cover"
 
-
-import "./component/header/header"
-import"./component/cover/cover"
-
-import"./component/bio/bio"
-
-
-import"./assets/city.png"
-
-
-
-
-
-
-// // //
-// // /* 
-// // this is a big comment
+import bio from "./component/bio/bio"
+// 
 
 
 
@@ -34,4 +20,12 @@ import"./assets/city.png"
 
 
 
-// //  */
+
+/* 
+
+This is a big comment
+
+
+
+*/
+// import "./component/header/header"

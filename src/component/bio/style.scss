@@ -5,11 +5,12 @@ $color: rgba(0,0,0, 0.4);
   color: white;
   font-weight: bold;
   position: absolute;
-  top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-100%);
   z-index: 2;
   width: 80%;
   padding: 20px;
+  height: 300px;
   text-align: center;
+  line-height: 200px;
 }

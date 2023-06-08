@@ -1,5 +1,5 @@
 function hello() {
- console.log("hello world !");
+ console.log("hello world ! Frontend");
     
 }
 export default hello
