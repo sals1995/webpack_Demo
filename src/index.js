@@ -1,19 +1,14 @@
-import hello from "./hello world"
+
+import hello from "./hello world.js"
+
 hello()
-
-
-
-import header from "./component/header/header"
 
 import "./style.css"
 
-import cover from"./component/cover/cover"
+import "./component/header/header.js"
+import "./component/cover/cover.js"
 
-import bio from "./component/bio/bio"
-// 
-
-
-
+import "./component/bio/bio.js"
 
 
 
@@ -24,6 +19,12 @@ import bio from "./component/bio/bio"
 /* 
 
 This is a big comment
+
+
+
+
+
+
 
 
 
